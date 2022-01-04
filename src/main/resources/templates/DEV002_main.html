@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>main</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h2 class="header">Main</h2>
+	<p th:text="${msg}"></p>
+	<form action="/main" method="post">
+		<table>
+			<tr>
+				<td><input type="submit" name="search" value="Search" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="upload" value="Upload/Download" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="logout" value="Log Out" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

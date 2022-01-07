@@ -1,7 +1,5 @@
 package jp.co.ino.boot.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,9 +59,9 @@ public class DEV001Service {
 			return mav;
 		}
 
-		Optional<Users> getUsers = usersRepository.findById(users.getId());
+		Users getUsers = usersRepository.findOne(id, password);
 
-		if (getUsers.isPresent()) {
+		if (getUsers != null) {
 
 			mav.setViewName(CommonConst.VIEW_NAME_MAIN);
 		} else {

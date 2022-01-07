@@ -1,5 +1,9 @@
 package jp.co.ino.boot.common;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class CommonLogic {
 
 	/**
@@ -67,6 +71,40 @@ public class CommonLogic {
 		} catch (NumberFormatException e) {
 			// 出来なければtrue
 			return true;
+		}
+	}
+
+	/**
+	 * 生年月日 年齢計算メソッド
+	 * 
+	 * @param date
+	 * @return
+	 * @throws ParseException
+	 */
+	public String editBirthday(String birthday) throws ParseException {
+
+		if (birthday != null) {
+
+			// データフォーマット
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+
+			// birthdayをDate型変換
+			Date formatBirth = sdf.parse(birthday);
+
+			// 現在の日付を取得
+			Date now = new Date();
+
+			// 年齢計算 (現日付(yyyyMMdd) - 生年月日(yyyyMMdd) ÷ 10000 )
+			int BeforeAge = (Integer.parseInt(sdf.format(now)) - Integer.parseInt(sdf.format(formatBirth))) / 10000;
+
+			// 数字型年齢(BeforeAge)を文字列型(age)に変換
+			String age = String.valueOf(BeforeAge);
+
+			// 年齢計算後の文字列型 年齢を返す
+			return age;
+
+		} else {
+			return null;// 処理なし
 		}
 	}
 

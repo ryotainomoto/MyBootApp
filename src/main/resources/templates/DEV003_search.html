@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<table>
+		<thead class="scrollHead">
+			<tr>
+				<th class="hno">No</th>
+				<th class="hcompany">会社</th>
+				<th class="hdep">事業部</th>
+				<th class="hname">氏名</th>
+				<th class="hname">氏名(ひらがな)</th>
+				<th class="hbirth">年齢</th>
+				<th class="hbusiness">担当管理営業</th>
+				<th class="henter">入社日</th>
+				<th class="hcommis">稼働状況</th>
+				<th class="hdetail">詳細</th>
+				<th class="hdelete">削除</th>
+				<th class="hyakushoku">役職</th>
+			</tr>
+		</thead>
+		<tbody class="scrollBody">
+			<tr th:each="obj : ${datalist}">
+				<td class="no" th:text="${obj.empId}"></td>
+				<td class="company" th:text="${obj.abbreviation}"></td>
+				<td class="dep" th:text="${obj.department}"></td>
+				<td class="name" th:text="${obj.name}"></td>
+				<td class="name" th:text="${obj.nameHiragana}"></td>
+				<td class="birth" th:text="${obj.birthday}"></td>
+				<td class="business" th:text="${obj.businessManager}"></td>
+				<td class="enter" th:text="${obj.enterDate}"></td>
+				<td class="commis" th:text="${obj.commissioningStatus}"></td>
+				<td class="detail"><a
+					th:href="@{/detail/{empId}/{id}/{password}/{role}(empId=${obj.empId}, id=${id}, password=${password}, role=${role})}">詳細</a>
+				</td>
+				<td class="delete"><a th:if="${trueCheck}"
+					th:href="@{/delete/{empId}/{id}/{password}/{role}(empId=${obj.empId}, id=${id}, password=${password}, role=${role})}"
+					onclick="return deleteCk();">削除</a> <a th:if="${falseCheck}"
+					class="disabled" tabindex="-1">削除</a></td>
+				<td class="yakushoku" th:text="${obj.companyId}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

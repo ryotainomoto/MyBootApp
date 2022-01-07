@@ -2,22 +2,16 @@ package jp.co.ino.boot.enums;
 
 public enum PositionEnum {
 
-	POS01("01", "社員"), POS02("02", "サブリーダー"), POS03("03", "リーダー"), POS04("04", "マネージャー");
+	社員("01"), サブリーダー("02"), リーダー("03"), マネージャー("04");
 
 	private String id;
-	private String value;
 
-	private PositionEnum(String id, String value) {
+	private PositionEnum(String id) {
 		this.id = id;
-		this.value = value;
 	}
 
 	public String getId() {
 		return id;
-	}
-
-	public String getValue() {
-		return value;
 	}
 
 }

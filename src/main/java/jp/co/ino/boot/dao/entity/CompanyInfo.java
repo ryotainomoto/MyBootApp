@@ -16,7 +16,7 @@ public class CompanyInfo {
 
 	@Id
 	@Column(name = "company_id")
-	private long companyId;
+	private String companyId;
 
 	@Column(name = "company_name")
 	private String companyName;

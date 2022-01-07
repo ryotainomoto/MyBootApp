@@ -8,11 +8,17 @@ public class CommonConst {
 	/** メイン画面 */
 	public static final String MAIN_PASS = "/main";
 
+	// ■■■■■■■■■■■■■■■■■■■■■■ params ■■■■■■■■■■■■■■■■■■■■■■ //
+	/** 検索画面 */
+	public static final String SEARCH_PARAM = "search";
+
 	// ■■■■■■■■■■■■■■■■■■■■■■ 画面名 ■■■■■■■■■■■■■■■■■■■■■■ //
 	/** 画面名 ： ログイン画面 **/
 	public static final String VIEW_NAME_INDEX = "DEV001_index";
 	/** 画面名 ： メイン画面 **/
 	public static final String VIEW_NAME_MAIN = "DEV002_main";
+	/** 画面名 ： 検索画面 **/
+	public static final String VIEW_NAME_SEARCH = "DEV002_search";
 
 	// ■■■■■■■■■■■■■■■■■■■■■■ 単語 ■■■■■■■■■■■■■■■■■■■■■■ //
 	/** formModel **/

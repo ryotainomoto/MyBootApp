@@ -11,6 +11,7 @@ import jp.co.ino.boot.common.CommonConst;
 import jp.co.ino.boot.common.Message;
 import jp.co.ino.boot.dao.entity.Users;
 import jp.co.ino.boot.services.DEV001Service;
+import jp.co.ino.boot.services.DEV003Service;
 
 @Controller
 public class AppController {
@@ -18,6 +19,10 @@ public class AppController {
 	/** ログインサービス */
 	@Autowired
 	DEV001Service dev001Service;
+
+	/** 検索サービス */
+	@Autowired
+	DEV003Service dev003Service;
 
 	/**
 	 * ログイン 初期表示
@@ -49,6 +54,24 @@ public class AppController {
 		try {
 			// ログイン画面へ遷移
 			return dev001Service.login(users, mav);
+		} catch (Exception e) {
+			// 例外発生の場合
+			return error();
+		}
+	}
+
+	/**
+	 * 検索画面 初期表示
+	 * 
+	 * @param mav
+	 * @return
+	 */
+	@RequestMapping(value = CommonConst.MAIN_PASS, params = CommonConst.SEARCH_PARAM, method = RequestMethod.GET)
+	public ModelAndView searchInit(ModelAndView mav) {
+
+		try {
+			// 検索画面へ遷移
+			return dev003Service.init(mav);
 		} catch (Exception e) {
 			// 例外発生の場合
 			return error();

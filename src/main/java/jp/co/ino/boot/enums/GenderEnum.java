@@ -1,12 +1,12 @@
 package jp.co.ino.boot.enums;
 
-public enum DepartmentEnum {
+public enum GenderEnum {
 
-	開発("01"), インフラ("02"), 検証("03");
+	男("1"), 女("2");
 
 	private String id;
 
-	private DepartmentEnum(String id) {
+	private GenderEnum(String id) {
 		this.id = id;
 	}
 

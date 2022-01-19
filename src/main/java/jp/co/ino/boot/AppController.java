@@ -78,10 +78,22 @@ public class AppController {
 		}
 	}
 
-	@RequestMapping(value = "edit", params = "goToTop", method = RequestMethod.POST)
-	public ModelAndView main() {
+	/**
+	 * ログアウト処理
+	 * 
+	 * @param mav
+	 * @return
+	 */
+	@RequestMapping(value = CommonConst.MAIN_PASS, params = CommonConst.LOGOUT_PARAM, method = RequestMethod.GET)
+	public ModelAndView logout(ModelAndView mav) {
 
-		return null;
+		try {
+			// ログアウト
+			return this.index(mav);
+		} catch (Exception e) {
+			// 例外発生の場合
+			return error();
+		}
 	}
 
 	/**

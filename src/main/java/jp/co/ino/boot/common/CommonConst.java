@@ -11,6 +11,10 @@ public class CommonConst {
 	// ■■■■■■■■■■■■■■■■■■■■■■ params ■■■■■■■■■■■■■■■■■■■■■■ //
 	/** 検索画面 */
 	public static final String SEARCH_PARAM = "search";
+	/** Upload/Download画面 */
+	public static final String UPLOAD_PARAM = "upload";
+	/** ログアウト */
+	public static final String LOGOUT_PARAM = "logout";
 
 	// ■■■■■■■■■■■■■■■■■■■■■■ 画面名 ■■■■■■■■■■■■■■■■■■■■■■ //
 	/** 画面名 ： ログイン画面 **/

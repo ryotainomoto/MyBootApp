@@ -12,12 +12,12 @@
 				<th class="hno">No</th>
 				<th class="hcompany">会社</th>
 				<th class="hdep">事業部</th>
+				<th class="hpos">職位</th>
 				<th class="hname">氏名</th>
-				<th class="hname">氏名(ひらがな)</th>
+				<th class="hname">氏名(カナ)</th>
 				<th class="hbirth">年齢</th>
-				<th class="hbusiness">担当管理営業</th>
-				<th class="henter">入社日</th>
-				<th class="hcommis">稼働状況</th>
+				<th class="hgender">性別</th>
+				<th class="hbusiness">上司</th>
 				<th class="hdetail">詳細</th>
 				<th class="hdelete">削除</th>
 				<th class="hyakushoku">役職</th>
@@ -25,15 +25,15 @@
 		</thead>
 		<tbody class="scrollBody">
 			<tr th:each="obj : ${datalist}">
-				<td class="no" th:text="${obj.empId}"></td>
-				<td class="company" th:text="${obj.abbreviation}"></td>
+				<td class="no" th:text="${obj.no}"></td>
+				<td class="company" th:text="${obj.companyInfoId}"></td>
 				<td class="dep" th:text="${obj.department}"></td>
+				<td class="pos" th:text="${obj.position}"></td>
 				<td class="name" th:text="${obj.name}"></td>
-				<td class="name" th:text="${obj.nameHiragana}"></td>
+				<td class="name" th:text="${obj.nameKana}"></td>
 				<td class="birth" th:text="${obj.birthday}"></td>
-				<td class="business" th:text="${obj.businessManager}"></td>
-				<td class="enter" th:text="${obj.enterDate}"></td>
-				<td class="commis" th:text="${obj.commissioningStatus}"></td>
+				<td class="gender" th:text="${obj.gender}"></td>
+				<td class="boss" th:text="${obj.boss}"></td>
 				<td class="detail"><a
 					th:href="@{/detail/{empId}/{id}/{password}/{role}(empId=${obj.empId}, id=${id}, password=${password}, role=${role})}">詳細</a>
 				</td>

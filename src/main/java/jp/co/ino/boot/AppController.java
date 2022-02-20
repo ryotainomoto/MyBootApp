@@ -13,6 +13,10 @@ import jp.co.ino.boot.dao.entity.Users;
 import jp.co.ino.boot.services.DEV001Service;
 import jp.co.ino.boot.services.DEV003Service;
 
+/**
+ * コントローラークラス
+ *
+ */
 @Controller
 public class AppController {
 
